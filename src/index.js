@@ -1,17 +1,20 @@
-import { AppStateProvider } from './store' 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import './teleporthq/style.css'
-import Home from './teleporthq/pages/home'
+import Script from 'dangerous-html/react'
+
+import './style.css'
+import Home from './views/home'
+import FigmaImport from './views/figma-import'
 
 const App = () => {
   return (
     <Router>
-      <AppStateProvider>
+      <div>
         <Route component={Home} exact path="/" />
-      </AppStateProvider>
+        <Route component={FigmaImport} exact path="/figma-import" />
+      </div>
     </Router>
   )
 }
